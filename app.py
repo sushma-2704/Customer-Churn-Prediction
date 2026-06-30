@@ -218,9 +218,19 @@ if st.button("🔍 Predict Customer Churn"):
     input_df.loc[0, "PaperlessBilling"] = 1 if paperless_billing == "Yes" else 0
 
     # Numerical Features
-    input_df.loc[0, "tenure"] = tenure
-    input_df.loc[0, "MonthlyCharges"] = monthly_charges
-    input_df.loc[0, "TotalCharges"] = total_charges
+    try:
+        input_df.loc[0, "tenure"] = tenure
+        st.success("✅ tenure assigned")
+
+        input_df.loc[0, "MonthlyCharges"] = monthly_charges
+        st.success("✅ MonthlyCharges assigned")
+
+        input_df.loc[0, "TotalCharges"] = total_charges
+        st.success("✅ TotalCharges assigned")
+
+    except Exception as e:
+        st.error(f"Error: {e}")
+        st.stop()
 
     # Gender
     if gender == "Male":
