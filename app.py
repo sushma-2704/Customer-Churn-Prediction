@@ -205,6 +205,8 @@ if st.button("🔍 Predict Customer Churn"):
 
     # Create a dataframe with all features initialized to 0
     input_df = pd.DataFrame(0.0, index=[0], columns=feature_names)
+    st.write(input_df.dtypes)
+    st.write(type(monthly_charges), monthly_charges)
     # ==========================
     # Binary Features
     # ==========================
