@@ -204,7 +204,7 @@ st.divider()
 if st.button("🔍 Predict Customer Churn"):
 
     # Create a dataframe with all features initialized to 0
-    input_df = pd.DataFrame(0, index=[0], columns=feature_names)
+    input_df = pd.DataFrame(0.0, index=[0], columns=feature_names)
     # ==========================
     # Binary Features
     # ==========================
