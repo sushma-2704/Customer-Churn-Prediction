@@ -1,29 +1,44 @@
 # 📊 Customer Churn Prediction using Machine Learning
 
-## 📌 Overview
+An end-to-end Machine Learning web application that predicts whether a telecom customer is likely to churn based on customer information. The application is built using **Python**, **Scikit-learn**, and **Streamlit**, allowing users to interactively enter customer details and receive real-time predictions.
 
-This project is a Machine Learning web application that predicts whether a telecom customer is likely to churn. The application is built using **Python**, **Scikit-learn**, and **Streamlit**, providing an interactive interface for users to enter customer details and receive real-time predictions.
+---
 
-In addition to predicting churn, the application provides:
+## 🌐 Live Demo
 
-* Churn probability
-* Risk level assessment
-* Business recommendations
-* Possible reasons for customer churn
-* Suggested customer retention strategies
+🔗 **Streamlit App:** https://customer-churn-prediction-27.streamlit.app/
+
+---
+
+## 📖 Project Overview
+
+Customer churn is one of the biggest challenges faced by telecom companies. Identifying customers who are likely to leave enables businesses to take proactive retention measures.
+
+This project uses a **Random Forest Classifier** to predict customer churn and provides additional business insights to help interpret the prediction.
+
+The application displays:
+
+* ✅ Churn Prediction
+* 📈 Churn Probability
+* ⚠️ Risk Level Assessment
+* 💡 Business Recommendations
+* 🔍 Possible Reasons for Churn
+* 🤝 Customer Retention Strategies
+* 📝 Prediction Summary
 
 ---
 
 ## 🚀 Features
 
-* Interactive Streamlit dashboard
-* Customer churn prediction using Random Forest
+* Interactive Streamlit web application
+* Customer churn prediction using Machine Learning
+* Real-time prediction results
 * Churn probability estimation
 * Risk level classification
 * Business recommendations
-* Explainable prediction with possible churn reasons
+* Explainable prediction with churn reasons
 * Customer retention strategy suggestions
-* Prediction summary
+* Clean and user-friendly interface
 
 ---
 
@@ -40,9 +55,16 @@ In addition to predicting churn, the application provides:
 
 ## 🤖 Machine Learning Model
 
-**Best Model:** Random Forest Classifier
+**Algorithm Used:** Random Forest Classifier
 
-The model was trained on the Telco Customer Churn dataset after data preprocessing, feature engineering, one-hot encoding, and feature scaling.
+### Data Preprocessing
+
+* Missing value handling
+* Feature engineering
+* One-Hot Encoding
+* Feature Scaling
+
+The model was trained using the **Telco Customer Churn Dataset**.
 
 ---
 
@@ -53,9 +75,9 @@ Customer-Churn-Prediction/
 │
 ├── app.py
 ├── analysis.py
-├── feature_names.pkl
 ├── random_forest.pkl
 ├── scaler.pkl
+├── feature_names.pkl
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -63,32 +85,50 @@ Customer-Churn-Prediction/
 
 ---
 
-## ▶️ How to Run
+## ⚙️ Installation
 
-1. Clone the repository.
-2. Install the required packages:
+Clone the repository:
+
+```bash
+git clone https://github.com/sushma-2704/Customer-Churn-Prediction.git
+```
+
+Move into the project folder:
+
+```bash
+cd Customer-Churn-Prediction
+```
+
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the Streamlit application:
+Run the application:
 
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 ---
 
 ## 🎯 Future Improvements
 
-* Improve UI/UX design
-* Add model comparison
-* Visualize prediction insights
-* Enhance explainability with feature importance
+* Enhance the UI/UX
+* Compare multiple Machine Learning models
+* Add feature importance visualization
+* Improve model explainability
+* Deploy future model updates
 
 ---
 
 ## 👩‍💻 Developed By
 
-**Mohana Sushma**
+**D. Mohana Sushma**
+
+GitHub: https://github.com/sushma-2704
+
+---
+
+⭐ If you found this project useful, consider giving it a star on GitHub.
