@@ -69,7 +69,7 @@ st.divider()
 # CUSTOMER INFORMATION
 # ==========================
 
-st.subheader("👤 Customer Information")
+st.subheader(" Customer Information")
 
 col1, col2 = st.columns(2)
 
@@ -99,7 +99,7 @@ with col2:
 # ==========================
 
 st.divider()
-st.subheader("📶 Service Information")
+st.subheader("Service Information")
 
 col1, col2 = st.columns(2)
 
@@ -154,7 +154,7 @@ with col2:
 # ==========================
 
 st.divider()
-st.subheader("💳 Account Information")
+st.subheader("Account Information")
 
 col1, col2 = st.columns(2)
 
@@ -312,11 +312,11 @@ if st.button("🔍 Predict Customer Churn"):
     churn_probability = probability[1]
     # Calculate Risk Level
     if churn_probability < 0.30:
-        risk_level = "🟢 Low"
+        risk_level = " Low"
     elif churn_probability < 0.70:
-        risk_level = "🟡 Medium"
+        risk_level = "Medium"
     else:
-        risk_level = "🔴 High"
+        risk_level = " High"
     st.divider()
     st.subheader("📊 Prediction Analysis")
 
@@ -336,27 +336,27 @@ if st.button("🔍 Predict Customer Churn"):
 
     with col3:
         if churn_probability < 0.30:
-            st.metric("Risk Level", "🟢 Low")
+            st.metric("Risk Level", " Low")
         elif churn_probability < 0.70:
-            st.metric("Risk Level", "🟡 Medium")
+            st.metric("Risk Level", "Medium")
         else:
-            st.metric("Risk Level", "🔴 High")
+            st.metric("Risk Level", "High")
 
     # Final message
     if prediction == 1:
-        st.error("🚨 Customer is Likely to Churn")
+        st.error(" Customer is Likely to Churn")
     else:
-        st.success("🎉 Customer is Likely to Stay")
+        st.success("Customer is Likely to Stay")
 
     # Confidence section
-    st.subheader("📈 Prediction Confidence")
+    st.subheader(" Prediction Confidence")
     st.progress(float(churn_probability))
     st.write(f"**Churn Probability:** {churn_probability*100:.2f}%")
      
     # ==========================
     # RECOMMENDATION
     # ==========================
-    if risk_level == "🟢 Low":
+    if risk_level == " Low":
 
         recommendation = """
     Customer has a low probability of churning.
@@ -364,7 +364,7 @@ if st.button("🔍 Predict Customer Churn"):
     Continue providing quality service and maintain customer satisfaction.
     """
 
-    elif risk_level == "🟡 Medium":
+    elif risk_level == " Medium":
 
         recommendation = """
     Customer has a moderate chance of churning.
@@ -379,75 +379,75 @@ if st.button("🔍 Predict Customer Churn"):
 
     Immediate customer retention strategies are recommended.
     """
-    st.subheader("💡Business Recommendation")
+    st.subheader("Business Recommendation")
 
     st.info(recommendation)
     # ==========================
     # POSSIBLE REASONS FOR CHURN
     # ==========================
 
-    st.subheader("🔍 Possible Reasons for Churn")
+    st.subheader(" Possible Reasons for Churn")
 
     reasons = []
 
     # Contract
     if contract == "Month-to-month":
-        reasons.append("📄 Customer has a Month-to-month contract, which is associated with higher churn.")
+        reasons.append(" Customer has a Month-to-month contract, which is associated with higher churn.")
 
     # Internet Service
     if internet_service == "Fiber optic":
-        reasons.append("🌐 Customer uses Fiber Optic Internet, where churn is generally higher.")
+        reasons.append(" Customer uses Fiber Optic Internet, where churn is generally higher.")
 
     # Monthly Charges
     if monthly_charges > 80:
-        reasons.append("💰 Monthly charges are relatively high.")
+        reasons.append(" Monthly charges are relatively high.")
 
     # Tech Support
     if tech_support == "No":
-        reasons.append("🛠 Customer does not have Tech Support.")
+        reasons.append(" Customer does not have Tech Support.")
 
     # Online Security
     if online_security == "No":
-        reasons.append("🔒 Customer does not have Online Security.")
+        reasons.append(" Customer does not have Online Security.")
 
     # Tenure
     if tenure < 12:
-        reasons.append("📅 Customer has been with the company for less than one year.")
+        reasons.append(" Customer has been with the company for less than one year.")
 
     # Display reasons
     if reasons:
         for reason in reasons:
             st.write(reason)
     else:
-        st.success("✅ No major churn indicators were identified based on the provided information.")
+        st.success(" No major churn indicators were identified based on the provided information.")
     # ==========================
     # RETENTION STRATEGIES
     # ==========================
 
-    st.subheader("💼 Suggested Retention Strategies")
+    st.subheader(" Suggested Retention Strategies")
 
     strategies = []
 
     if contract == "Month-to-month":
-        strategies.append("✅ Encourage the customer to switch to a long-term contract.")
+        strategies.append(" Encourage the customer to switch to a long-term contract.")
 
     if monthly_charges > 80:
-        strategies.append("💰 Consider offering a discount or promotional plan.")
+        strategies.append(" Consider offering a discount or promotional plan.")
 
     if tech_support == "No":
-        strategies.append("🛠 Provide a free trial of Technical Support.")
+        strategies.append(" Provide a free trial of Technical Support.")
 
     if online_security == "No":
-        strategies.append("🔒 Offer Online Security as a value-added service.")
+        strategies.append(" Offer Online Security as a value-added service.")
 
     if tenure < 12:
-        strategies.append("🎁 Provide a loyalty reward for new customers.")
+        strategies.append(" Provide a loyalty reward for new customers.")
 
     if strategies:
         for strategy in strategies:
             st.write(strategy)
     else:
-        st.success("🎉 Continue maintaining customer satisfaction with regular engagement.")
+        st.success(" Continue maintaining customer satisfaction with regular engagement.")
     st.divider()
 
     st.caption(
@@ -459,7 +459,7 @@ if st.button("🔍 Predict Customer Churn"):
     # ==========================
 
     st.divider()
-    st.subheader("📋 Prediction Summary")
+    st.subheader(" Prediction Summary")
 
     status = "Churn" if prediction == 1 else "Stay"
 
@@ -470,24 +470,24 @@ if st.button("🔍 Predict Customer Churn"):
     # Explain why the customer is likely to stay
     if prediction == 0:
 
-        st.subheader("✅ Why this customer is likely to stay")
+        st.subheader(" Why this customer is likely to stay")
 
         stay_reasons = []
 
         if contract != "Month-to-month":
-            stay_reasons.append("📄 Customer has a long-term contract.")
+            stay_reasons.append(" Customer has a long-term contract.")
 
         if monthly_charges <= 80:
-            stay_reasons.append("💰 Monthly charges are within a reasonable range.")
+            stay_reasons.append(" Monthly charges are within a reasonable range.")
 
         if tech_support == "Yes":
-            stay_reasons.append("🛠 Customer has Technical Support.")
+            stay_reasons.append("Customer has Technical Support.")
 
         if online_security == "Yes":
-            stay_reasons.append("🔒 Customer has Online Security.")
+            stay_reasons.append(" Customer has Online Security.")
 
         if tenure >= 12:
-            stay_reasons.append("📅 Customer has been with the company for a long time.")
+            stay_reasons.append(" Customer has been with the company for a long time.")
 
         if stay_reasons:
             for reason in stay_reasons:
