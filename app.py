@@ -202,11 +202,11 @@ with col2:
 st.divider()
 
 if st.button("🔍 Predict Customer Churn"):
-
+   
+  
     # Create a dataframe with all features initialized to 0
     input_df = pd.DataFrame(0.0, index=[0], columns=feature_names)
-    st.write(input_df.dtypes)
-    st.write(type(monthly_charges), monthly_charges)
+   
     # ==========================
     # Binary Features
     # ==========================
@@ -301,9 +301,12 @@ if st.button("🔍 Predict Customer Churn"):
     # Scale the input
     input_scaled = scaler.transform(input_df)
 
-    # Make prediction
-    prediction = model.predict(input_scaled)[0]
-    probability = model.predict_proba(input_scaled)[0]
+    try:
+        prediction = model.predict(input_scaled)[0]
+        probability = model.predict_proba(input_scaled)[0]
+    except Exception as e:
+        st.error(f"Prediction failed: {e}")
+        st.stop()  
 
     # Get churn probability FIRST
     churn_probability = probability[1]
